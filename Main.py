@@ -1,38 +1,49 @@
 import pygame
-import main_menu
+import GUI
+import InGameMenuObjects
+import createMenuObjects as MENU
+import InGameMenuObjects as IN_GAME_MENU
 
 pygame.init()
 
-start = main_menu.run_menus()
-# returns true when the player presses play button
 
-if start:
+MENU.current_menu = MENU.main_menu
+game_running = True
+screen = GUI.screen
 
-    game_running = True
-    clock = pygame.time.Clock()
-    screen = pygame.display.get_surface()
-    pygame.display.set_caption("Game")
-    while game_running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                game_running = False
-        screen.fill((0, 0, 0))
+clock = pygame.time.Clock()
+pygame.display.get_surface()
+pygame.display.set_caption("Game")
 
-        pygame.display.flip()
+while game_running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            game_running = False
+            break
 
-        clock.tick(60)
+        if MENU.current_menu.handle_events(event) is not None:
+            MENU.current_menu = MENU.current_menu.handle_events(event)
+
+            if MENU.current_menu == IN_GAME_MENU.game_state_menu:
+                InGameMenuObjects.game_state_menu.isLoaded = True
+
+            if MENU.current_menu == "Start MainMenu":
+                MENU.current_menu = MENU.main_menu
+                MENU.main_menu.isLoaded = True
 
 
 
+    screen.fill((0, 0, 0))
+
+    MENU.current_menu.render()
+    pygame.display.flip()
+
+    clock.tick(60)
 
 else:
     pass
 
 pygame.quit()
-
-
-
-
 
 
 
