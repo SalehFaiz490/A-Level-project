@@ -4,6 +4,7 @@ import InGameMenuObjects
 import createMenuObjects as MENU
 import InGameMenuObjects as IN_GAME_MENU
 
+
 pygame.init()
 
 
@@ -13,7 +14,7 @@ screen = GUI.screen
 
 clock = pygame.time.Clock()
 pygame.display.get_surface()
-pygame.display.set_caption("Game")
+pygame.display.set_caption("Tomb of the Mask")
 
 while game_running:
     for event in pygame.event.get():

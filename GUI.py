@@ -42,6 +42,7 @@ class Button(UIElement):
         # needed to know what each button does
         self.command_code = command_code
 
+
         # need inti color so that it goes back to its inital color after hozered
         self.init_color = init_color
         self.hoverColor = hover_color

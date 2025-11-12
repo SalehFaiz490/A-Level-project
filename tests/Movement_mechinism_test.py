@@ -57,6 +57,7 @@ speed = 700
 
 # Game loop
 while running:
+    print(dt)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -95,7 +96,6 @@ while running:
             blocked.add("down")
             collision = True
 
-        print(blocked)
         # Object collision
         if sprite.rect.colliderect(obstacle.rect):
             collision = True
