@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36" version="28.2.5">
+  <diagram name="Page-1" id="YhhDS0yrxrDOk3_ZAwXX">
+    <mxGraphModel dx="438" dy="627" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1dUpxcizhv01Jit41Za9-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1dUpxcizhv01Jit41Za9-12" target="1dUpxcizhv01Jit41Za9-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1dUpxcizhv01Jit41Za9-12" value="Generate base labyrinth&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="348.25" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1dUpxcizhv01Jit41Za9-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1dUpxcizhv01Jit41Za9-13" target="1dUpxcizhv01Jit41Za9-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1dUpxcizhv01Jit41Za9-13" value="Check if labyrinth&amp;nbsp;&lt;div&gt;is completable and find desired path based on player movement constraints&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="343" y="170" width="130.5" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="1dUpxcizhv01Jit41Za9-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="1dUpxcizhv01Jit41Za9-15" target="1dUpxcizhv01Jit41Za9-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1dUpxcizhv01Jit41Za9-15" value="Define start and end points" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="348.25" y="10" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1dUpxcizhv01Jit41Za9-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1dUpxcizhv01Jit41Za9-17" target="1dUpxcizhv01Jit41Za9-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1dUpxcizhv01Jit41Za9-17" value="Identify redundant walls or edges&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="348.25" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1dUpxcizhv01Jit41Za9-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1dUpxcizhv01Jit41Za9-19" target="1dUpxcizhv01Jit41Za9-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1dUpxcizhv01Jit41Za9-19" value="Replace redundant places with spikes, To ensue that the maze is still completable" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="348.25" y="343" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1dUpxcizhv01Jit41Za9-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1dUpxcizhv01Jit41Za9-21" target="1dUpxcizhv01Jit41Za9-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1dUpxcizhv01Jit41Za9-21" value="Re-ensure that the labyrinth is completable" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="348.25" y="423" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1dUpxcizhv01Jit41Za9-23" value="Draw labyrinth onto screen&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="348.25" y="503" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
