@@ -3,7 +3,10 @@ import GUI
 import InGameMenuObjects
 import createMenuObjects as MENU
 import InGameMenuObjects as IN_GAME_MENU
+import database
+import sys
 
+fonts_folder = sys.path.append("fonts")
 
 pygame.init()
 

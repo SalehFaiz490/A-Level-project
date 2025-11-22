@@ -4,7 +4,7 @@ import pygame
 pygame.init()
 
 # Create a screen
-screen = pygame.display.set_mode((1280, 720))
+screen = pygame.display.set_mode((1280, 704))
 
 class UIElement:
     def __init__(self, xpos, ypos, font):
