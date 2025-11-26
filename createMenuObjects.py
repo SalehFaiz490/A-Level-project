@@ -14,7 +14,7 @@ leaderboard_menu = GUI.Menu(False)
 
 # Helper functsions for diffrent button commands
 def play_button_command():
-    # No more menus :)
+    # No more menus
     main_menu.isLoaded = False
     current_menu = InGameMenuObjects.game_state_menu
 
@@ -61,7 +61,7 @@ main_menu.add_element(GUI.Label((1280 / 2) + 650, 150, "Grand9K Pixel.ttf", "Tom
 main_menu.add_element(GUI.Label((1280 / 2) + 650, 300, "Grand9K Pixel.ttf", "By Saleh Faiz", 10,
                             "yellow"))
 
-main_menu.add_element(GUI.Label((1280 / 2) + 650, 300, "Grand9K Pixel.ttf", f"your recent score: {recent_score}", 10,
+main_menu.add_element(GUI.Label((1280 / 2) + 1200, 650, "Grand9K Pixel.ttf", f"Your recent score: {recent_score}", 20,
                             "yellow"))
 
 main_menu.add_element(GUI.Button((1280 / 2) - 100, 300, "Grand9K Pixel.ttf", "See Leaderboard", "yellow",
