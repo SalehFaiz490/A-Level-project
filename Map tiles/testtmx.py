@@ -1,126 +1,75 @@
 import pygame
 from pytmx.util_pygame import load_pygame
 import pyscroll
+from pyscroll.data import MapAggregator, TiledMapData
 import sys
 
 pygame.init()
-screen = pygame.display.set_mode((1280, 704))
+screen = pygame.display.set_mode((1280, 704), pygame.RESIZABLE)
 clock = pygame.time.Clock()
 
-# -----------------------------------------
-# Player Sprite
-# -----------------------------------------
+
 class Player(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
         self.image = pygame.image.load("spike.png").convert_alpha()
         self.rect = self.image.get_rect(center=(x, y))
-        self.speed = 5
+        self.speed = 250
+        self.pos = pygame.Vector2(x, y)
 
-    def update(self):
+    def update(self, dt):
         keys = pygame.key.get_pressed()
+        move = pygame.Vector2(0, 0)
+
         if keys[pygame.K_w] or keys[pygame.K_UP]:
-            self.rect.y -= self.speed
+            move.y -= 1
         if keys[pygame.K_s] or keys[pygame.K_DOWN]:
-            self.rect.y += self.speed
+            move.y += 1
         if keys[pygame.K_a] or keys[pygame.K_LEFT]:
-            self.rect.x -= self.speed
+            move.x -= 1
         if keys[pygame.K_d] or keys[pygame.K_RIGHT]:
-            self.rect.x += self.speed
+            move.x += 1
+
+        if move.length() > 0:
+            move = move.normalize() * self.speed * dt
+
+        self.pos += move
+        self.rect.center = self.pos
 
 
-# -----------------------------------------
-# Load a single TMX map chunk with offset
-# -----------------------------------------
-def load_chunk(filename, index, screen_size):
-    tmx = load_pygame(filename)
+world_data = MapAggregator((32, 32))
+y_offset = 0
 
-    map_data = pyscroll.TiledMapData(tmx)
-    chunk_height = tmx.height * tmx.tileheight
+map_filenames = ["spawn_segment2.tmx", "spawn_segment.tmx"]
 
-    # Offset the entire map upwards by chunk_height * index
-    offset_y = -index * chunk_height
-    map_data.origin_y = offset_y
-
-    renderer = pyscroll.BufferedRenderer(map_data, screen_size)
-
-    return {
-        "tmx": tmx,
-        "map_data": map_data,
-        "renderer": renderer,
-        "height": chunk_height,
-        "offset": offset_y,
-        "index": index
-    }
+for filename in map_filenames:
+    tmx_data = load_pygame(filename)
+    pyscroll_data = TiledMapData(tmx_data)
+    world_data.add_map(pyscroll_data, (0, y_offset))
+    y_offset += tmx_data.height * tmx_data.tileheight  # exact stacking
 
 
-# -----------------------------------------
-# Setup Game
-# -----------------------------------------
-chunks = {}
-map_layers = []
+map_layer = pyscroll.BufferedRenderer(world_data, size=screen.get_size(), clamp_camera=True)
+group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=0)
 
-# Load first map chunk at index 0
-chunks[0] = load_chunk("spawn_segment.tmx", 0, screen.get_size())
-map_layers.append(chunks[0]["renderer"])
 
-# Player
-player = Player(300, 300)
-
-# Build initial group
-group = pyscroll.PyscrollGroup(map_layer=map_layers[0], default_layer=0)
+player = Player(400, 400)  # 400, 400 is inside top map
+player.layer = 0
 group.add(player)
 
-current_chunk = 0
 
-
-# -----------------------------------------
-# Game Loop
-# -----------------------------------------
 while True:
-    dt = clock.tick(60)
+    dt = clock.tick(60) / 1000.0
 
-    # Events
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+        elif event.type == pygame.VIDEORESIZE:
+            screen = pygame.display.set_mode((event.w, event.h), pygame.RESIZABLE)
+            map_layer.set_size((event.w, event.h))
 
-    # Update player
-    player.update()
-
-    chunk_height = chunks[current_chunk]["height"]
-
-    # If player goes above the top of the current chunk -> load next
-    if player.rect.y < chunks[current_chunk]["offset"] - 200:
-        current_chunk += 1
-
-        if current_chunk not in chunks:
-            # Load new chunk
-            chunks[current_chunk] = load_chunk(
-                "spawn_segment.tmx",
-                current_chunk,
-                screen.get_size()
-            )
-
-            map_layers.append(chunks[current_chunk]["renderer"])
-            print(f"Loaded chunk index: {current_chunk}")
-
-            # ----------------------------
-            # REBUILD GROUP (important!)
-            # ----------------------------
-            group = pyscroll.PyscrollGroup(
-                map_layer=map_layers[0],
-                default_layer=0
-            )
-            group.add(player)
-
-            for layer in map_layers[1:]:
-                group.add_layer(layer)
-
-    # Center camera
+    group.update(dt)
     group.center(player.rect.center)
-
-    # Draw
     group.draw(screen)
     pygame.display.flip()
