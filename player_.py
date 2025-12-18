@@ -9,9 +9,12 @@ class Player(pygame.sprite.Sprite):
 
         self.pos = pygame.Vector2(x, y)
         self.dir = pygame.Vector2(0, 0)  # direction persists
-        self.speed = 5000
+        self.speed = 500
         self.moving = False
         self.score = 0
+
+        self.username = ""
+        self.recent_score = 0
 
     def update_score(self, coin_rects, group):
         for coin in coin_rects:
@@ -70,5 +73,14 @@ class Player(pygame.sprite.Sprite):
 
         if self.dir != (0, 0):
             self.moving = True
+
+    def set_Username(self, username):
+        self.username = username
+
+    def set_recent_score(self, recent_score):
+        self.recent_score = recent_score
+
+
+
 
 

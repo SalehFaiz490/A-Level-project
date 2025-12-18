@@ -1,8 +1,9 @@
 import pygame
-import registor
+import tkinter as tk
 import GUI
 import InGameMenuObjects
 import database
+import registor
 
 
 # Create diffrent menus
@@ -47,7 +48,13 @@ def back_button_command():
     return new_menu
 
 def register_command():
-    return registor.create_window()
+    if database.try_connection():
+        return registor.create_window()
+
+    else:
+        return acess_denied_window()
+
+
 
 recent_score = 0
 
@@ -97,12 +104,13 @@ leaderboard_menu.add_element(GUI.Label((1280 / 2) + 900, 350, "Grand9K Pixel.ttf
                             "yellow"))
 
 
-db = database.collect_leaderboard_data()
+
+db_data = database.collect_leaderboard_data()
 
 lb_range = 0
 
-if len(db) < 5:
-    lb_range = len(db)+1
+if len(db_data) < 5:
+    lb_range = len(db_data) + 1
 else:
     lb_range = 6
 
@@ -114,13 +122,29 @@ for i in range(1, lb_range):
 
 
     # usernames
-    leaderboard_menu.add_element(GUI.Label((1280 / 2) + 400, 400 + (i*100), "Grand9K Pixel.ttf", (db[i-1][0]), 17,
+    leaderboard_menu.add_element(GUI.Label((1280 / 2) + 400, 400 + (i*100), "Grand9K Pixel.ttf", (db_data[i - 1][0]), 17,
                                 "yellow"))
 
     # scores
-    leaderboard_menu.add_element(GUI.Label((1280 / 2) + 900, 400 + (i*100), "Grand9K Pixel.ttf", (str(db[i-1][1])), 17,
+    leaderboard_menu.add_element(GUI.Label((1280 / 2) + 900, 400 + (i*100), "Grand9K Pixel.ttf", (str(db_data[i - 1][1])), 17,
                                 "yellow"))
 
 
-leaderboard_menu.add_element(GUI.Button((1280 / 2) - 100, 600, "Grand9K Pixel.ttf", "Register Player", "yellow",
+registor_button = (GUI.Button((1280 / 2) - 100, 600, "Grand9K Pixel.ttf", "Register Player", "yellow",
                      "#FFFFC5", 200, 50, "black", 20, register_command))
+
+leaderboard_menu.add_element(registor_button)
+
+def acess_denied_window():
+    window = tk.Tk()
+
+    window.geometry("400x200")
+
+    user_name_entry_label = tk.Label(text="No Connection was established \n This window will close in 3 seconds", font=("Grand9K Pixel.ttf", 15, "bold"), fg="red")
+
+
+    user_name_entry_label.pack()
+
+    window.after(3000, window.destroy)
+
+    window.mainloop()

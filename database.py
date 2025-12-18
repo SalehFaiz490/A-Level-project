@@ -52,3 +52,13 @@ def registor_new_user(Username, password):
     db.commit()
 
     return True
+
+
+def commit_recent_score(recent_score, user_ID):
+    db = try_connection()
+    cursor = db.cursor()
+    cursor.execute("")
+
+    db.commit()
+
+

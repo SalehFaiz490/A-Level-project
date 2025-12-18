@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c362ff4-4346-4744-9225-53f8fb4a67bc" name="Changes" comment="testing player and map features">
-      <change afterPath="$PROJECT_DIR$/Map tiles/map.tmx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Map tiles/wall_top-imageonline.co-merged.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NEA/Coin_UML.drawio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NEA/wall_tiles.drawio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handle_coin_logic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handle_map_collisions.py" afterDir="false" />
+    <list default="true" id="8c362ff4-4346-4744-9225-53f8fb4a67bc" name="Changes" comment="Working player movement system and coil collectsion.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InGameMenuObjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/InGameMenuObjects.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Map tiles/Saleh Faiz Share Code.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Map tiles/map1.tiled-session" beforeDir="false" afterPath="$PROJECT_DIR$/Map tiles/map1.tiled-session" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createMenuObjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/createMenuObjects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player_.py" beforeDir="false" afterPath="$PROJECT_DIR$/player_.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +23,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -173,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764143749899</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Working player movement system and coil collectsion.">
+      <option name="closed" value="true" />
+      <created>1766083413624</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1766083413624</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,7 +191,8 @@
     <MESSAGE value="Better solution structure and add in game GUI" />
     <MESSAGE value="Adding leaderboard feature and registor page" />
     <MESSAGE value="testing player and map features" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing player and map features" />
+    <MESSAGE value="Working player movement system and coil collectsion." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working player movement system and coil collectsion." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
