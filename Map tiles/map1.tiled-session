@@ -3,17 +3,68 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "map.tmx",
     "expandedProjectPaths": [
+        "."
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "C:/Users/Saleh/wall_top-imageonline.co-merged.tsx": {
+            "scaleInDock": 1
+        },
+        "map.tmx": {
+            "scale": 0.03125,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": -1152,
+                "y": 309616
+            }
+        },
+        "segment.tmx": {
+            "scale": 0.46757812499999996,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 639.4653299916458,
+                "y": 352.88220551378447
+            }
+        },
+        "spawn_segment2.tmx": {
+            "scale": 0.46757812499999996,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 639.4653299916458,
+                "y": 352.88220551378447
+            }
+        },
+        "test.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 452,
+                "y": -5352
+            }
+        },
+        "wall_top-imageonline.co-merged.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
     },
-    "map.fixedSize": false,
+    "last.imagePath": "C:/Users/Saleh/Desktop/A-Level-project/Map tiles",
+    "map.fixedSize": true,
+    "map.height": 10000,
+    "map.lastUsedFormat": "tmx",
     "map.width": 40,
     "openFiles": [
+        "wall_top-imageonline.co-merged.tsx",
+        "map.tmx"
     ],
     "project": "map1.tiled-project",
     "recentFiles": [
-    ]
+        "wall_top-imageonline.co-merged.tsx",
+        "map.tmx",
+        "spawn_segment2.tmx",
+        "test.tmx",
+        "segment.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
 }

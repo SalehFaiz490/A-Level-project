@@ -4,18 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c362ff4-4346-4744-9225-53f8fb4a67bc" name="Changes" comment="Adding leaderboard feature and registor page">
-      <change afterPath="$PROJECT_DIR$/Map tiles/Saleh Faiz Share Code.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Map tiles/map1.tiled-project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Map tiles/map1.tiled-session" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Map tiles/spawn_segment2.tmx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load_map.py" afterDir="false" />
+    <list default="true" id="8c362ff4-4346-4744-9225-53f8fb4a67bc" name="Changes" comment="testing player and map features">
+      <change afterPath="$PROJECT_DIR$/Map tiles/map.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Map tiles/wall_top-imageonline.co-merged.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NEA/Coin_UML.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NEA/wall_tiles.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handle_coin_logic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handle_map_collisions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InGameMenuObjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/InGameMenuObjects.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Map tiles/segment.tmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Map tiles/testtmx.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createMenuObjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/createMenuObjects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Map tiles/Saleh Faiz Share Code.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Map tiles/map1.tiled-session" beforeDir="false" afterPath="$PROJECT_DIR$/Map tiles/map1.tiled-session" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player_.py" beforeDir="false" afterPath="$PROJECT_DIR$/player_.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,14 +157,42 @@
       <option name="project" value="LOCAL" />
       <updated>1763831668663</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="testing player and map features">
+      <option name="closed" value="true" />
+      <created>1764143670210</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764143670210</updated>
+    </task>
+    <task id="LOCAL-00006" summary="testing player and map features">
+      <option name="closed" value="true" />
+      <created>1764143749899</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764143749899</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Better solution structure and add in game GUI" />
     <MESSAGE value="Adding leaderboard feature and registor page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding leaderboard feature and registor page" />
+    <MESSAGE value="testing player and map features" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing player and map features" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

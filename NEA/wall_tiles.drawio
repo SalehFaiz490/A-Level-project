@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.1.1">
+  <diagram name="Page-1" id="28UwtGC0vvE83ei51AY0">
+    <mxGraphModel dx="789" dy="1102" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-7" edge="1" parent="1" source="1Fn6NO7dvOcfqXHK3-V7-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1Fn6NO7dvOcfqXHK3-V7-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Start&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="120" x="300" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-9" edge="1" parent="1" source="1Fn6NO7dvOcfqXHK3-V7-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Decode TMX data" vertex="1">
+          <mxGeometry height="60" width="120" x="300" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-12" edge="1" parent="1" source="1Fn6NO7dvOcfqXHK3-V7-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-19" edge="1" parent="1" source="1Fn6NO7dvOcfqXHK3-V7-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="1Fn6NO7dvOcfqXHK3-V7-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="170" y="440" />
+            </Array>
+            <mxPoint x="160" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-10" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="count &amp;lt; length of TMX wall_layer grid" vertex="1">
+          <mxGeometry height="140" width="137.5" x="291.25" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-16" edge="1" parent="1" source="1Fn6NO7dvOcfqXHK3-V7-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1Fn6NO7dvOcfqXHK3-V7-15" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Create rect for each Tile and add to array" vertex="1">
+          <mxGeometry height="60" width="120" x="300" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-18" edge="1" parent="1" source="1Fn6NO7dvOcfqXHK3-V7-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.958;entryY=0.479;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="1Fn6NO7dvOcfqXHK3-V7-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="430" as="sourcePoint" />
+            <mxPoint x="570" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-15" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="Increment count" vertex="1">
+          <mxGeometry height="60" width="120" x="510" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="True" vertex="1">
+          <mxGeometry height="30" width="60" x="350" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="False" vertex="1">
+          <mxGeometry height="30" width="60" x="230" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-24" edge="1" parent="1" source="1Fn6NO7dvOcfqXHK3-V7-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1Fn6NO7dvOcfqXHK3-V7-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-22" parent="1" style="whiteSpace=wrap;html=1;" value="Return array of rects" vertex="1">
+          <mxGeometry height="60" width="120" x="110" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="1Fn6NO7dvOcfqXHK3-V7-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="End" vertex="1">
+          <mxGeometry height="60" width="120" x="110" y="680" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

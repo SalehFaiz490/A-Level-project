@@ -19,6 +19,8 @@ def deactivate_pause_menu():
     return game_state_menu
 
 
+
+
 game_state_menu.add_element(GUI.Button(1220, 0, "seguisym.ttf", "⚙️", "#00000000",
                                        "#FFFFC5", 50, 50, "#808080", 70, activate_pause_menu))
 
@@ -30,3 +32,12 @@ pause_menu.add_element(GUI.Button((1280 / 2) - 100, 400, "Grand9K Pixel.ttf", "E
 
 pause_menu.add_element(GUI.Label((1280 / 2) + 650, 300, "Grand9K Pixel.ttf", "Game is paused", 50,
                             "yellow"))
+
+score_label = GUI.Label(1220, 30, "Grand9K Pixel.ttf", "Score: ", 30, "yellow")
+
+game_state_menu.add_element(score_label)
+
+def set_score(score):
+    score_label.text = f"Score: {str(score)}"
+
+

@@ -1,14 +1,11 @@
 import pyscroll
 import pytmx
-import GUI
 
-map_file = ["Map tiles\spawn_segment.tmx"]
+map_file = "Map tiles/map.tmx"
 
-tmx_data = pytmx.load_pygame(map_file[0])
+tmx_data = pytmx.load_pygame(map_file, pixelalpha=True)
 
 map_data = pyscroll.TiledMapData(tmx_data)
-
-screen = GUI.screen
 
 map_layer = pyscroll.BufferedRenderer(map_data, (1280, 704))
 
