@@ -33,6 +33,21 @@ def coin_collisions(tiled_map):
 
     return collision_rects
 
+def spike_collisions(tiled_map):
+    collision_rects = []
+    layer_name = "spike_layer"
+    for x, y, gid in tiled_map.get_layer_by_name(layer_name):
+        tile = tiled_map.get_tile_image_by_gid(gid)
+        if tile:
+            rect = pygame.Rect(
+                x * tiled_map.tilewidth,
+                y * tiled_map.tileheight,
+                tiled_map.tilewidth,
+                tiled_map.tileheight
+            )
+            collision_rects.append(rect)
+
+    return collision_rects
 
 
 def get_spawn_cords(tiled_map):

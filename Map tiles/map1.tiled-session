@@ -3,12 +3,23 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "map.tmx",
+    "activeFile": "",
     "expandedProjectPaths": [
         "."
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "C:/Users/Saleh/PycharmProjects/Test TMXing/segments/seg_a.tmx": {
+            "scale": 0.2753515625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 639.1828628174208,
+                "y": 640.9987232231522
+            }
+        },
+        "C:/Users/Saleh/PycharmProjects/Test TMXing/segments/wall_top-imageonline.co-merged.tsx": {
+            "scaleInDock": 1
+        },
         "C:/Users/Saleh/wall_top-imageonline.co-merged.tsx": {
             "scaleInDock": 1
         },
@@ -16,8 +27,32 @@
             "scale": 0.03125,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": -1152,
-                "y": 309616
+                "x": 640,
+                "y": 160016
+            }
+        },
+        "seg_a.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 600,
+                "y": 743.9393939393939
+            }
+        },
+        "seg_b.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 669.6969696969696,
+                "y": 819.6969696969696
+            }
+        },
+        "seg_c.tmx": {
+            "scale": 0.46757812499999996,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 639.4653299916458,
+                "y": 640.5346700083544
             }
         },
         "segment.tmx": {
@@ -25,7 +60,7 @@
             "selectedLayer": 0,
             "viewCenter": {
                 "x": 639.4653299916458,
-                "y": 352.88220551378447
+                "y": 351.812865497076
             }
         },
         "spawn_segment2.tmx": {
@@ -44,6 +79,22 @@
                 "y": -5352
             }
         },
+        "transistion.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 678.7878787878788,
+                "y": 516.6666666666666
+            }
+        },
+        "transition.tmx": {
+            "scale": 0.36589843749999995,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 639.5217252055088,
+                "y": 640.8882246183412
+            }
+        },
         "wall_top-imageonline.co-merged.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
@@ -51,20 +102,24 @@
     },
     "last.imagePath": "C:/Users/Saleh/Desktop/A-Level-project/Map tiles",
     "map.fixedSize": true,
-    "map.height": 10000,
+    "map.height": 40,
     "map.lastUsedFormat": "tmx",
     "map.width": 40,
     "openFiles": [
-        "wall_top-imageonline.co-merged.tsx",
-        "map.tmx"
     ],
     "project": "map1.tiled-project",
     "recentFiles": [
-        "wall_top-imageonline.co-merged.tsx",
+        "segment.tmx",
         "map.tmx",
+        "wall_top-imageonline.co-merged.tsx",
+        "C:/Users/Saleh/PycharmProjects/Test TMXing/segments/seg_a.tmx",
+        "seg_a.tmx",
+        "seg_b.tmx",
+        "transistion.tmx",
+        "seg_c.tmx",
+        "transition.tmx",
         "spawn_segment2.tmx",
-        "test.tmx",
-        "segment.tmx"
+        "test.tmx"
     ],
     "tileset.lastUsedFormat": "tsx"
 }

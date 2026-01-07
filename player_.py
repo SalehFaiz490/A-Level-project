@@ -4,7 +4,7 @@ import pygame
 class Player(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
-        self.image = self.image = pygame.image.load("Map tiles/spike.png").convert_alpha()
+        self.image = self.image = pygame.image.load("Map tiles/player_image.png").convert_alpha()
         self.rect = self.image.get_rect()
 
         self.pos = pygame.Vector2(x, y)
@@ -12,19 +12,20 @@ class Player(pygame.sprite.Sprite):
         self.speed = 500
         self.moving = False
         self.score = 0
+        self.living = True
 
         self.username = ""
         self.recent_score = 0
 
     def update_score(self, coin_rects, group):
-        for coin in coin_rects:
-            if self.rect.colliderect(coin):
+        for coin in coin_rects[:]:
+            if self.rect.colliderect(coin.rect):
                 coin_rects.remove(coin)
                 group.remove(coin)
                 self.score += 1
 
-    def set_direction(self, keys):
-        # Only set direction when a key is pressed
+    def set_direction(self, keys, screen):
+
         if keys[pygame.K_w]:
             self.dir = pygame.Vector2(0, -1)
 
@@ -41,7 +42,7 @@ class Player(pygame.sprite.Sprite):
         # --- Move along X ---
 
         self.pos.x += self.dir.x * self.speed * dt
-        self.rect.x = int(self.pos.x)
+        self.rect.x = (self.pos.x)
 
         for wall in walls:
             if self.rect.colliderect(wall):
@@ -57,7 +58,7 @@ class Player(pygame.sprite.Sprite):
 
         # --- Move along Y ---
         self.pos.y += self.dir.y * self.speed * dt
-        self.rect.y = int(self.pos.y)
+        self.rect.y = (self.pos.y)
 
         for wall in walls:
             if self.rect.colliderect(wall):
@@ -74,11 +75,22 @@ class Player(pygame.sprite.Sprite):
         if self.dir != (0, 0):
             self.moving = True
 
+    def check_player_living(self, lava_rect, spikes):
+        if self.rect.colliderect(lava_rect):
+            self.living = False
+
+        for spike in spikes:
+            if self.rect.colliderect(spike):
+                self.living = False
+
+
+
     def set_Username(self, username):
         self.username = username
 
     def set_recent_score(self, recent_score):
         self.recent_score = recent_score
+
 
 
 

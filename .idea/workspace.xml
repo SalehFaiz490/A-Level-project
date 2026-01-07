@@ -5,9 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c362ff4-4346-4744-9225-53f8fb4a67bc" name="Changes" comment="Working player movement system and coil collectsion.">
+      <change afterPath="$PROJECT_DIR$/Map tiles/Segments.tiled-project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Map tiles/Segments.tiled-session" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Map tiles/Test.tiled-project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Map tiles/Test.tiled-session" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Map tiles/player_image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Map tiles/untitled.tiled-project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Map tiles/untitled.tiled-session" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NEA/Untitled Diagram.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NEA/lava.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NEA/model_lava_growth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NEA/plaer UML.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NEA/player_decompsistion.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NEA/player_mechanics.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Saleh Faiz Computer Science NEA 1 (2) - Copy.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lava_sprite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createMenuObjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/createMenuObjects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InGameMenuObjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/InGameMenuObjects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Map tiles/map.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/Map tiles/map.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Map tiles/map1.tiled-session" beforeDir="false" afterPath="$PROJECT_DIR$/Map tiles/map1.tiled-session" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handle_coin_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/handle_coin_logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handle_map_collisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/handle_map_collisions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_map.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player_.py" beforeDir="false" afterPath="$PROJECT_DIR$/player_.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +97,48 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="handle_map_collisions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="A-Level-project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/handle_map_collisions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="load_map" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="A-Level-project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/load_map.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="new_tmx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="A-Level-project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -99,10 +162,14 @@
     </configuration>
     <list>
       <item itemvalue="Python.Main.py" />
+      <item itemvalue="Python.handle_map_collisions" />
+      <item itemvalue="Python.load_map" />
       <item itemvalue="Python.new_tmx" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.load_map" />
+        <item itemvalue="Python.handle_map_collisions" />
         <item itemvalue="Python.new_tmx" />
       </list>
     </recent_temporary>
@@ -172,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766083413624</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Working player movement system and coil collectsion.">
+      <option name="closed" value="true" />
+      <created>1766095195887</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1766095195887</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -26,7 +26,6 @@ def collect_leaderboard_data():
                    "ORDER BY high_score DESC;")
 
     high_score = cursor.fetchall()
-    print(high_score)
     return high_score
 
 

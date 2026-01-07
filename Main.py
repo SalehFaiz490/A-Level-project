@@ -7,6 +7,7 @@ import player_
 import load_map
 import pyscroll
 import handle_map_collisions
+import lava_sprite
 
 
 pygame.init()
@@ -16,40 +17,47 @@ MENU.current_menu = MENU.main_menu
 game_running = True
 screen = GUI.screen
 
+def load_game():
+    global player, wall_rects, spike_rects, coin_rects, lava, group
 
-tmx_data = load_map.tmx_data
+    tmx_data = load_map.tmx_data
+    spawn_cords = handle_map_collisions.get_spawn_cords(tmx_data)
 
-spawn_crods = handle_map_collisions.get_spawn_cords(tmx_data)
-player = player_.Player(spawn_crods[0], spawn_crods[1])
+    player = player_.Player(spawn_cords[0], spawn_cords[1])
 
-wall_rects = handle_map_collisions.wall_collisions(tmx_data)
-coins = handle_map_collisions.coin_collisions(tmx_data)
+    wall_rects = handle_map_collisions.wall_collisions(tmx_data)
+    spike_rects = handle_map_collisions.spike_collisions(tmx_data)
 
+    coin_rects = handle_map_collisions.coin_collisions(tmx_data)
+
+    lava = lava_sprite.Lava(0, (spawn_cords[0], spawn_cords[1] + 100))
+    print(type(lava))
+    lava.layer = 3
+    group = pyscroll.PyscrollGroup(
+        map_layer=load_map.map_layer,
+        default_layer=1
+    )
+
+    player.layer = 1
+    group.add(player)
+    group.add(lava)
+
+    for coin in coin_rects:
+        group.add(coin)
+
+
+load_game()
 
 clock = pygame.time.Clock()
 pygame.display.get_surface()
 pygame.display.set_caption("Tomb of the Mask")
 
-
-
-map_layer = load_map.map_layer
-group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=1)
-player.layer = 1
-group.add(player)
-
-for coin in coins:
-    group.add(coin)
-
-start_game = False
+start_game_loop = False
 dir_collide = None
 wall_rect = None
 
 
-
-
 while game_running:
-
-    camera_offset = player.rect.center - pygame.Vector2(1280 // 2, 704 // 2)
 
     dt = clock.tick(60) / 1000.0
 
@@ -66,21 +74,24 @@ while game_running:
 
             if MENU.current_menu == IN_GAME_MENU.game_state_menu:
                 InGameMenuObjects.game_state_menu.isLoaded = True
-                start_game = True
+                start_game_loop = True
 
             elif MENU.current_menu == IN_GAME_MENU.pause_menu:
                 # pause menu stops the game
-                start_game = False
+                start_game_loop = False
+
+
 
             elif MENU.current_menu == "Start MainMenu":
-                start_game = False
+                # game over or restarted
+                load_game()
+                start_game_loop = False
                 MENU.current_menu = MENU.main_menu
                 MENU.main_menu.isLoaded = True
-                screen.fill((0, 0, 0))
 
 
         # game logic
-    if start_game is True:
+    if start_game_loop is True:
 
         keys = pygame.key.get_pressed()
 
@@ -90,12 +101,23 @@ while game_running:
         group.center(player.rect.center)
         group.draw(screen)
 
-        player.update_score(coins, group)
+        lava.update_size(dt)
+        lava.update_rate(dt)
+
+        player.update_score(coin_rects, group)
+        player.check_player_living(lava.rect, spike_rects)
 
         if not player.moving:
-            player.set_direction(keys)
+            player.set_direction(keys, screen)
 
         player.move_and_collide(dt, wall_rects)
+
+        if not player.living:
+            screen.fill("black")
+            start_game_loop = False
+            MENU.current_menu = IN_GAME_MENU.game_over_menu
+            IN_GAME_MENU.game_over_menu.isLoaded = True
+            load_game()
 
     MENU.current_menu.render()
 
