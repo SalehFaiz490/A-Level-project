@@ -15,7 +15,11 @@ class Player(pygame.sprite.Sprite):
         self.living = True
 
         self.username = ""
+        self.user_id = None
         self.recent_score = 0
+        self.high_score = 0
+
+        self.diffuclity_mode = "Medium"
 
     def update_score(self, coin_rects, group):
         for coin in coin_rects[:]:
@@ -24,18 +28,22 @@ class Player(pygame.sprite.Sprite):
                 group.remove(coin)
                 self.score += 1
 
-    def set_direction(self, keys, screen):
+    def set_direction(self, keys):
 
         if keys[pygame.K_w]:
+            # pos.y is decreasing with each frame, so moving upwards.
             self.dir = pygame.Vector2(0, -1)
 
         elif keys[pygame.K_s]:
+            # pos.y is increasing with each frame, so moving downwards.
             self.dir = pygame.Vector2(0, 1)
 
         elif keys[pygame.K_a]:
+            # pos.x is decreasing with each frame, so moving to the left.
             self.dir = pygame.Vector2(-1, 0)
 
         elif keys[pygame.K_d]:
+            # pos.x is increasing with each frame, so moving to the right.
             self.dir = pygame.Vector2(1, 0)
 
     def move_and_collide(self, dt, walls):
@@ -78,18 +86,13 @@ class Player(pygame.sprite.Sprite):
     def check_player_living(self, lava_rect, spikes):
         if self.rect.colliderect(lava_rect):
             self.living = False
+            self.recent_score = self.score
 
         for spike in spikes:
             if self.rect.colliderect(spike):
                 self.living = False
+                self.recent_score = self.score
 
-
-
-    def set_Username(self, username):
-        self.username = username
-
-    def set_recent_score(self, recent_score):
-        self.recent_score = recent_score
 
 
 

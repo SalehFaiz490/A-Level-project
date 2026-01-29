@@ -29,17 +29,21 @@ def collect_leaderboard_data():
     return high_score
 
 
-def collect_recent_score(User_ID):
+def collect_scores(User_ID):
     db = try_connection()
     cursor = db.cursor()
 
-    cursor.execute("SELECT recent_score "
+    cursor.execute("SELECT recent_score, High_score "
                    "FROM players "
                    "WHERE User_ID = %s", (User_ID,))
 
-    recent_score = cursor.fetchone()
+    scores = cursor.fetchone()
 
-    return recent_score
+    return scores
+
+
+
+
 
 def registor_new_user(Username, password):
     db = try_connection()
@@ -53,11 +57,40 @@ def registor_new_user(Username, password):
     return True
 
 
+
+
 def commit_recent_score(recent_score, user_ID):
     db = try_connection()
     cursor = db.cursor()
     cursor.execute("")
 
     db.commit()
+
+def check_database(username, password):
+    # if returns true, existing user
+    # else must register
+
+    db = try_connection()
+    cursor = db.cursor()
+
+    cursor.execute("SELECT Username, password "
+                   "FROM players; ")
+
+    data = cursor.fetchall()
+
+    for i in range(0, len(data), 1):
+        if data[i][0] == username and data[i][1] == password:
+            return True, i+1
+
+    return False, len(data) + 1
+
+
+
+
+
+
+
+
+
 
 

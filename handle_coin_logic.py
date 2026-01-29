@@ -6,7 +6,7 @@ class Coin(pygame.sprite.Sprite):
         super().__init__()
         self.image = pygame.image.load("Map tiles/coil.png").convert_alpha()
         self.pos = pygame.Vector2(x, y)
-        self.rect = self.image.get_rect(center=self.pos)
+        self.rect = self.image.get_rect(topleft=self.pos)
 
 
 

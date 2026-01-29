@@ -41,10 +41,14 @@ pause_menu.add_element(exit_to_main_menu_button)
 pause_menu.add_element(GUI.Label((1280 / 2) + 650, 300, "Grand9K Pixel.ttf", "Game is paused", 50,
                             "yellow"))
 
+# declare score label
 score_label = GUI.Label(1220, 30, "Grand9K Pixel.ttf", "Score: ", 30, "yellow")
 
+# add score label to game_state_mene
 game_state_menu.add_element(score_label)
 
+# This function is called in main to update score
+# It is needed to acess player.score outside main
 def set_score(score):
     score_label.text = f"Score: {str(score)}"
 

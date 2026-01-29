@@ -5,6 +5,7 @@ import handle_coin_logic
 def wall_collisions(tiled_map):
     collision_rects = []
     layer_name = "wall_layer"
+
     for x, y, gid in tiled_map.get_layer_by_name(layer_name):
         tile = tiled_map.get_tile_image_by_gid(gid)
         if tile:
@@ -18,15 +19,14 @@ def wall_collisions(tiled_map):
 
     return collision_rects
 
-def coin_collisions(tiled_map):
+def create_coins(tiled_map):
     collision_rects = []
     layer_name = "Coin layer"
     for x, y, gid in tiled_map.get_layer_by_name(layer_name):
         tile = tiled_map.get_tile_image_by_gid(gid)
         if tile:
-
-            px = x * tiled_map.tilewidth + (tiled_map.tilewidth) // 2
-            py = y * tiled_map.tileheight + (tiled_map.tileheight) // 2
+            px = x * tiled_map.tilewidth
+            py = y * tiled_map.tileheight
 
             collision_rects.append(handle_coin_logic.Coin(px, py))
 

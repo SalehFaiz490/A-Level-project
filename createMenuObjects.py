@@ -1,9 +1,8 @@
 import pygame
-import tkinter as tk
 import GUI
 import InGameMenuObjects
 import database
-import registor
+
 
 
 # Create diffrent menus
@@ -12,6 +11,8 @@ current_menu = main_menu
 
 options_menu = GUI.Menu(False)
 leaderboard_menu = GUI.Menu(False)
+help_menu = GUI.Menu(False)
+
 
 # Helper functsions for diffrent button commands
 def play_button_command():
@@ -41,18 +42,28 @@ def load_leaderboard_menu_command():
 
 
 def back_button_command():
+    # unloads the current menu
     current_menu.isLoaded = False
+    # back button will always return the user to main menu
+    # so load main menu
     main_menu.isLoaded = True
+    # the new menu is the main menu
+    # cannot use current menu here as will override above logic
     new_menu = main_menu
 
     return new_menu
 
-def register_command():
-    if database.try_connection():
-        return registor.create_window()
+def load_help_menu():
+    
+    options_menu.isLoaded = False
+    help_menu.isLoaded = True
+    current_menu = help_menu
 
-    else:
-        return acess_denied_window()
+    return current_menu
+
+
+
+
 
 
 
@@ -68,8 +79,6 @@ main_menu.add_element(GUI.Label((1280 / 2) + 650, 150, "Grand9K Pixel.ttf", "Tom
 main_menu.add_element(GUI.Label((1280 / 2) + 650, 300, "Grand9K Pixel.ttf", "By Saleh Faiz", 10,
                             "yellow"))
 
-main_menu.add_element(GUI.Label((1280 / 2) + 1200, 650, "Grand9K Pixel.ttf", f"Your recent score: {recent_score}", 20,
-                            "yellow"))
 
 main_menu.add_element(GUI.Button((1280 / 2) - 100, 300, "Grand9K Pixel.ttf", "See Leaderboard", "yellow",
                              "#FFFFC5", 200, 50, "black", 20, load_leaderboard_menu_command))
@@ -86,10 +95,55 @@ back_button = GUI.Button((1280 / 2) - 100, 500, "Grand9K Pixel.ttf", "Back", "ye
 
 
 options_menu.add_element(back_button)
+
 leaderboard_menu.add_element(back_button)
 
 # optsion menu items
 options_menu.add_element(GUI.Label((1280 / 2) + 650, 200, "Grand9K Pixel.ttf", "Change setting here", 32, "yellow"))
+
+options_menu.add_element(GUI.Button((1280 / 2) - 100, 400, "Grand9K Pixel.ttf", "See Help Menu!", "yellow",
+                             "#FFFFC5", 200, 50, "black", 20, load_help_menu))
+
+# help menu items
+
+# declare the help back button
+help_menu_back_button = GUI.Button((1280 / 2) - 100, 600, "Grand9K Pixel.ttf", "Back", "yellow",
+                     "#FFFFC5", 200, 50, "black", 20, back_button_command)
+
+help_menu.add_element(help_menu_back_button)
+
+
+help_string = """"
+            ────────────── HELP ───────────────
+        
+            OBJECTIVE
+            Reach the highest score possible by
+            moving through the map, collecting
+            coins, and avoiding hazards.
+            
+            RULES        
+            • The player loses if they collide
+              with the lava or a spike.
+            • Coins increase the player’s score.
+            • The game ends when the player
+              dies.
+            
+            CONTROLS
+            
+            w   Move Up
+            a   Move Down
+            s   Move Left
+            d   Move Right
+
+            
+            TIP
+            Plan your movement carefully and
+            react quickly to survive longer.
+            ──────────────────────────────────
+            """
+
+help_menu.add_element(GUI.Label((1280 / 2) + 650, 600, "seguisym.ttf", help_string, 15, "yellow"))
+
 
 
 #leaderbaord menu items
@@ -97,15 +151,15 @@ options_menu.add_element(GUI.Label((1280 / 2) + 650, 200, "Grand9K Pixel.ttf", "
 leaderboard_menu.add_element(GUI.Label((1280 / 2) + 650, 200, "Grand9K Pixel.ttf", "Leaderboard", 32,
                             "yellow"))
 
-leaderboard_menu.add_element(GUI.Label((1280 / 2) + 400, 350, "Grand9K Pixel.ttf", "Username", 17,
+leaderboard_menu.add_element(GUI.Label((1280 / 2) + 400, 350, "Grand9K Pixel.ttf", "Usernames", 17,
                             "yellow"))
 
-leaderboard_menu.add_element(GUI.Label((1280 / 2) + 900, 350, "Grand9K Pixel.ttf", "Highscore", 17,
+leaderboard_menu.add_element(GUI.Label((1280 / 2) + 900, 350, "Grand9K Pixel.ttf", "Highscores", 17,
                             "yellow"))
-
 
 
 db_data = database.collect_leaderboard_data()
+
 
 lb_range = 0
 
@@ -114,6 +168,9 @@ if len(db_data) < 5:
 else:
     lb_range = 6
 
+
+
+print("The value of lb_range is 2")
 
 for i in range(1, lb_range):
     count = str(i)
@@ -130,21 +187,4 @@ for i in range(1, lb_range):
                                 "yellow"))
 
 
-registor_button = (GUI.Button((1280 / 2) - 100, 600, "Grand9K Pixel.ttf", "Register Player", "yellow",
-                     "#FFFFC5", 200, 50, "black", 20, register_command))
 
-leaderboard_menu.add_element(registor_button)
-
-def acess_denied_window():
-    window = tk.Tk()
-
-    window.geometry("400x200")
-
-    user_name_entry_label = tk.Label(text="No Connection was established \n This window will close in 3 seconds", font=("Grand9K Pixel.ttf", 15, "bold"), fg="red")
-
-
-    user_name_entry_label.pack()
-
-    window.after(3000, window.destroy)
-
-    window.mainloop()
