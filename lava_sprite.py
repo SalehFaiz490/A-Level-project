@@ -2,42 +2,49 @@ import pygame
 
 
 class Lava(pygame.sprite.Sprite):
+    """
+    Represents the rising lava hazard in the game.
+    The lava grows over time and accelerates based on
+    the selected difficulty.
+    """
     def __init__(self, size, starting_pos):
         super().__init__()
+
+        # Initial size and position of the lava
         self.size = size
         self.pos = starting_pos
 
-        # Lava's image and appearance
+        # Create the lava surface and collision rects
         self.image = pygame.Surface([1400, self.size])
         self.rect = self.image.get_rect(center=self.pos)
         self.image.fill("red")
 
-        # changed with difficulty slider, to do with speed of lava
-        self.rate = 10
-        self.cap = 250
-        self.multplyer = 50
+        # Lava growth behaviour (modified by difficulty settings)
+        self.rate = 10          # Current growth speed
+        self.cap = 250          # Maximum growth speed
+        self.multplyer = 50     # Acceleration factor
 
     def update_size(self, dt):
+        """
+        Increases the size of the lava based on its current rate.
+        Uses delta time to remain frame-rate independent.
+        """
+        # Increase lava height over time
+        self.size += self.rate * dt
 
-        self.size = self.size + (self.rate * dt)
-        # percentage increece of size scaled to frame rate
-
+        # Recreate the surface to match the new size
         self.image = pygame.Surface([1400, self.size])
         self.rect = self.image.get_rect(center=self.pos)
         self.image.fill("red")
 
     def update_rate(self, dt):
-        # while the rate is less than the max, update the rate
-        # this accelerates the lavas growth over time
+        """
+        Gradually increases the lava's growth rate until it
+        reaches the defined cap.
+        """
         if self.rate <= self.cap:
-            # multiplier is used here to change the "acceleration" of the lava
-            self.rate += (self.multplyer * dt)
-
+            # Increase the growth rate over time (acceleration)
+            self.rate += self.multplyer * dt
         else:
-            # if the rate is at the cap, don't increase the rate further
+            # Prevent the growth rate from exceeding the cap
             self.rate = self.cap
-
-
-
-
-

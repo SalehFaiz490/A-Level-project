@@ -6,6 +6,7 @@ import database
 
 
 # Create diffrent menus
+
 main_menu = GUI.Menu(True)
 current_menu = main_menu
 
@@ -16,7 +17,7 @@ help_menu = GUI.Menu(False)
 
 # Helper functsions for diffrent button commands
 def play_button_command():
-    # No more menus
+    # Main menu unloaded, in game menu loaded
     main_menu.isLoaded = False
     current_menu = InGameMenuObjects.game_state_menu
 
@@ -54,7 +55,8 @@ def back_button_command():
     return new_menu
 
 def load_help_menu():
-    
+
+    # unload the options menu, loads the help menu
     options_menu.isLoaded = False
     help_menu.isLoaded = True
     current_menu = help_menu
@@ -70,22 +72,29 @@ def load_help_menu():
 recent_score = 0
 
 # main menu items
+
+# play button
 main_menu.add_element(GUI.Button((1280 / 2) - 100, 200, "Grand9K Pixel.ttf", "Play", "yellow",
                              "#FFFFC5", 200, 50, "black", 20, play_button_command))
 
+# Tomb of the mask label
 main_menu.add_element(GUI.Label((1280 / 2) + 650, 150, "Grand9K Pixel.ttf", "Tomb Of The Mask", 100,
                             "yellow"))
 
+
+# By Saleh Faiz label
 main_menu.add_element(GUI.Label((1280 / 2) + 650, 300, "Grand9K Pixel.ttf", "By Saleh Faiz", 10,
                             "yellow"))
 
-
+# See leaderboard button
 main_menu.add_element(GUI.Button((1280 / 2) - 100, 300, "Grand9K Pixel.ttf", "See Leaderboard", "yellow",
                              "#FFFFC5", 200, 50, "black", 20, load_leaderboard_menu_command))
 
+# Options button
 main_menu.add_element(GUI.Button((1280 / 2) - 100, 400, "Grand9K Pixel.ttf", "Options", "yellow",
                              "#FFFFC5", 200, 50, "black", 20, load_optsion_menu_command))
 
+# Quit button
 main_menu.add_element(GUI.Button((1280 / 2) - 100, 500, "Grand9K Pixel.ttf", "Quit", "red",
                              "#FFFFC5", 200, 50, "black", 20, pygame.quit))
 
@@ -93,20 +102,24 @@ main_menu.add_element(GUI.Button((1280 / 2) - 100, 500, "Grand9K Pixel.ttf", "Qu
 back_button = GUI.Button((1280 / 2) - 100, 500, "Grand9K Pixel.ttf", "Back", "yellow",
                      "#FFFFC5", 200, 50, "black", 20, back_button_command)
 
-
+# Add the back button to the diffrent menus
 options_menu.add_element(back_button)
 
 leaderboard_menu.add_element(back_button)
 
-# optsion menu items
+# Options menu items
+
+# Settings label
 options_menu.add_element(GUI.Label((1280 / 2) + 650, 200, "Grand9K Pixel.ttf", "Change setting here", 32, "yellow"))
 
+
+# See help menu button
 options_menu.add_element(GUI.Button((1280 / 2) - 100, 400, "Grand9K Pixel.ttf", "See Help Menu!", "yellow",
                              "#FFFFC5", 200, 50, "black", 20, load_help_menu))
 
 # help menu items
 
-# declare the help back button
+# declare the help back button, must have a diffrent y pos than defult back button
 help_menu_back_button = GUI.Button((1280 / 2) - 100, 600, "Grand9K Pixel.ttf", "Back", "yellow",
                      "#FFFFC5", 200, 50, "black", 20, back_button_command)
 
@@ -142,47 +155,49 @@ help_string = """"
             ──────────────────────────────────
             """
 
+# Create the help label
 help_menu.add_element(GUI.Label((1280 / 2) + 650, 600, "seguisym.ttf", help_string, 15, "yellow"))
 
 
 
 #leaderbaord menu items
 
+# Leaderboard label
 leaderboard_menu.add_element(GUI.Label((1280 / 2) + 650, 200, "Grand9K Pixel.ttf", "Leaderboard", 32,
                             "yellow"))
 
+# Usernames label
 leaderboard_menu.add_element(GUI.Label((1280 / 2) + 400, 350, "Grand9K Pixel.ttf", "Usernames", 17,
                             "yellow"))
 
+# Highscores label
 leaderboard_menu.add_element(GUI.Label((1280 / 2) + 900, 350, "Grand9K Pixel.ttf", "Highscores", 17,
                             "yellow"))
 
-
+# Collect the leaderboard from DB
 db_data = database.collect_leaderboard_data()
 
 
 lb_range = 0
 
+# determine the number of players shown in leaderboard, 5 is max
 if len(db_data) < 5:
     lb_range = len(db_data) + 1
 else:
     lb_range = 6
 
-
-
-print("The value of lb_range is 2")
+# Create username and score lables for top players in leaderboard.
 
 for i in range(1, lb_range):
     count = str(i)
     leaderboard_menu.add_element(GUI.Label((1280 / 2) + 200, 400 + (i*100), "Grand9K Pixel.ttf", count, 17,
                                 "yellow"))
 
-
-    # usernames
+    # Usernames
     leaderboard_menu.add_element(GUI.Label((1280 / 2) + 400, 400 + (i*100), "Grand9K Pixel.ttf", (db_data[i - 1][0]), 17,
                                 "yellow"))
 
-    # scores
+    # Scores
     leaderboard_menu.add_element(GUI.Label((1280 / 2) + 900, 400 + (i*100), "Grand9K Pixel.ttf", (str(db_data[i - 1][1])), 17,
                                 "yellow"))
 
