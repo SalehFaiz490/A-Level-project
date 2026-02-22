@@ -97,9 +97,9 @@ class Window:
             self.sucess_label.configure(text="Fields cannot be empty")
             return False
 
-        elif len(username) > 48 or len(password) > 48:
+        elif len(username) > 45 or len(password) > 45:
             self.sucess_label.configure(
-                text="Your Username or password were too long, cap = 48 characters"
+                text="Your Username or password were too long, cap = 45 characters"
             )
             return False
 

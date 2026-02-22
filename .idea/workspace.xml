@@ -6,16 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8c362ff4-4346-4744-9225-53f8fb4a67bc" name="Changes" comment="Finished game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InGameMenuObjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/InGameMenuObjects.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createMenuObjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/createMenuObjects.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handle_map_collisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/handle_map_collisions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lava_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/lava_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player_.py" beforeDir="false" afterPath="$PROJECT_DIR$/player_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registor.py" beforeDir="false" afterPath="$PROJECT_DIR$/registor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,8 +138,8 @@
     </configuration>
     <list>
       <item itemvalue="Python.Main.py" />
-      <item itemvalue="Python.load_map" />
       <item itemvalue="Python.handle_map_collisions" />
+      <item itemvalue="Python.load_map" />
       <item itemvalue="Python.new_tmx" />
     </list>
     <recent_temporary>
@@ -249,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769710073813</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Finished game">
+      <option name="closed" value="true" />
+      <created>1770502892066</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1770502892066</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
